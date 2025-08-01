@@ -1,4 +1,3 @@
-<!-- https://akilesh-ga.github.io/portfolio/frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+  :root {
+    --primary-color: #0d6efd;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1e1e2f;
+    --text-dark: #212529;
+    --text-light: #f1f1f1;
+    --accent-color: #0dcaf0;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
@@ -15,8 +23,8 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
     font-family: 'Segoe UI', sans-serif;
-    background-color: white;
-    color: black;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
   }
 
   body {
@@ -31,17 +39,18 @@
   .navbar {
     top: 0;
     z-index: 1000;
-    background-color: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
   .navbar-nav .nav-link {
-    color: black;
+    color: var(--text-dark);
+    transition: color 0.3s;
   }
 
   .navbar-nav .nav-link:hover {
+    color: var(--accent-color);
     text-decoration: underline;
-    color: blue;
   }
 
   section {
@@ -51,11 +60,12 @@
   .welcome-text {
     transition: all 0.3s ease;
     cursor: pointer;
-    color: black;
+    color: var(--primary-color);
   }
 
   .welcome-text:hover {
     font-size: 75px;
+    color: var(--accent-color);
   }
 
   .welcome-section {
@@ -69,23 +79,28 @@
 
   .about-container {
     min-height: 1000px;
+    font-size: 20px;
+    font-family: 'Segoe UI', sans-serif;
   }
 
   .carousel-card {
-    width: 300px;
-    height: 300px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    height: 280px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
   }
 
   .carousel-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 
   .carousel-card img {
     height: 100%;
     object-fit: contain;
+    padding: 20px;
   }
 
   .footer-icon {
@@ -94,18 +109,30 @@
     margin-right: 10px;
   }
 
+  footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+  }
+
   footer p {
     font-size: 0.9rem;
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   footer span {
     font-size: 1rem;
   }
 
-  footer {
-    background-color: black;
-    color: white;
+  h2, h4 {
+    color: var(--primary-color);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-color);
   }
 </style>
 </head>
@@ -119,6 +146,7 @@
         <li class="nav-item"><a class="nav-link fs-5" href="projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link fs-5" href="https://drive.google.com/file/d/1osmpWtQgEwXMUcpEKV6wKNLrckuMJ4ZR/view">Resume</a></li>
       </ul>
     </div>
   </nav>
@@ -136,74 +164,85 @@
         <h2 class="text-center mb-4">About Me</h2>
 
         <div class="mb-5">
-      <p>
-        I'm <strong>Akilesh G A</strong>, an aspiring software developer with a strong interest in backend systems and cross-platform applications. I enjoy solving real-world problems using scalable and efficient solutions.
-      </p>
-    </div>
+          <p>
+            I'm <strong>Akilesh G A</strong>, an aspiring software developer with a strong interest in backend systems and cross-platform applications. I enjoy solving real-world problems using scalable and efficient solutions.
+          </p>
+        </div>
 
-    <div class="mb-5">
-      <h4>Tech Stack</h4>
-      <ul class="list-unstyled">
-        <li><strong>Languages:</strong> C, C++, Java, Python</li>
-        <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, SQLite</li>
-        <li><strong>Frameworks & Tools:</strong> Spring Boot, Flutter, Firebase, Firestore</li>
-        <li><strong>DevOps:</strong> Git, GitHub, Docker, Jenkins, Terraform</li>
-      </ul>
-    </div>
+        <div class="mb-5">
+          <h4>Tech Stack</h4>
+          <ul class="list-unstyled">
+            <li><strong>Languages:</strong> C++, Java, Python</li>
+            <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, SQLite</li>
+            <li><strong>Frameworks & Tools:</strong> Numpy, Pandas, Flask, Spring Boot, Flutter, Firebase</li>
+            <li><strong>DevOps:</strong> Git, GitHub, Docker, Jenkins, Terraform</li>
+          </ul>
+        </div>
 
-    <div>
-      <h4>Core Strengths</h4>
-      <ul class="list-unstyled row">
-        <li class="col-md-6 mb-3"><strong>Scalable Development:</strong> Build clean, maintainable, and scalable backend solutions.</li>
-        <li class="col-md-6 mb-3"><strong>Automation & CI/CD:</strong> Experienced in modern DevOps practices for smooth delivery pipelines.</li>
-        <li class="col-md-6 mb-3"><strong>Cross-Platform Expertise:</strong> Develop mobile and desktop apps using Flutter and Firebase.</li>
-        <li class="col-md-6 mb-3"><strong>Continuous Learning:</strong> Thrive on new technologies and solving practical challenges.</li>
-      </ul>
-    </div>
+        <div>
+          <h4>Core Strengths</h4>
+          <ul class="list-unstyled row">
+            <li class="col-md-6 mb-3"><strong>Scalable Development:</strong> Build clean, maintainable, and scalable backend solutions.</li>
+            <li class="col-md-6 mb-3"><strong>Automation & CI/CD:</strong> Experienced in modern DevOps practices for smooth delivery pipelines.</li>
+            <li class="col-md-6 mb-3"><strong>Cross-Platform Expertise:</strong> Develop mobile and desktop apps using Flutter and Firebase.</li>
+            <li class="col-md-6 mb-3"><strong>Continuous Learning:</strong> Thrive on new technologies and solving practical challenges.</li>
+          </ul>
+        </div>
 
         <div class="d-flex justify-content-center mt-5">
           <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner text-center">
               <div class="carousel-item active">
-                <div class="card carousel-card">
+                <div class="card carousel-card mx-auto">
                   <div class="card-body">
-                    <a href="https://www.linkedin.com/in/akilesh-g-a-704959304/"><img src="frontend\assets\linkedin.png" class="img-fluid" alt="LinkedIn"></a>
+                    <a href="https://www.linkedin.com/in/akilesh-g-a-704959304/">
+                      <img src="assets/linkedin.png" class="img-fluid" alt="LinkedIn">
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card carousel-card">
+                <div class="card carousel-card mx-auto">
                   <div class="card-body">
-                    <a href="https://github.com/Akilesh-GA"><img src="assets/github.png" class="img-fluid" alt="GitHub"></a>
+                    <a href="https://github.com/Akilesh-GA">
+                      <img src="assets/github.png" class="img-fluid" alt="GitHub">
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card carousel-card">
+                <div class="card carousel-card mx-auto">
                   <div class="card-body">
-                    <a href="https://leetcode.com/u/Akilesh_1466/"><img src="assets/leetcode.png" class="img-fluid" alt="Leetcode"></a>
+                    <a href="https://leetcode.com/u/Akilesh_1466/">
+                      <img src="assets/leetcode.png" class="img-fluid" alt="Leetcode">
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card carousel-card">
+                <div class="card carousel-card mx-auto">
                   <div class="card-body">
-                    <a href="https://www.hackerrank.com/profile/akileshga_1466"><img src="assets/hackerrank.png" class="img-fluid" alt="hackerrank"></a>
+                    <a href="https://www.hackerrank.com/profile/akileshga_1466">
+                      <img src="assets/hackerrank.png" class="img-fluid" alt="Hackerrank">
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="card carousel-card">
+                <div class="card carousel-card mx-auto">
                   <div class="card-body">
-                    <a href="https://www.geeksforgeeks.org/user/akilesh1466/"><img src="assets/gfg.png" class="img-fluid" alt="GeeksforGeeks"></a>
+                    <a href="https://www.geeksforgeeks.org/user/akilesh1466/">
+                      <img src="assets/gfg.png" class="img-fluid" alt="GeeksforGeeks">
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-            <button title="prev-btn" class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+
+            <button title="btn1" class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </button>
-            <button title="next-btn" class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+            <button title="btn2" class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
               <span class="carousel-control-next-icon"></span>
             </button>
           </div>
@@ -217,7 +256,7 @@
       <h4 class="mb-4"><u>Contact</u></h4>
       <div class="mb-3 d-flex align-items-center">
         <img src="assets/mail.png" class="footer-icon rounded-circle" alt="mail icon">
-        <span><strong>Mail :</strong> example@gmail.com</span>
+        <span><strong>Mail :</strong> akileshga.1466@gmail.com </span>
       </div>
       <div class="mb-3 d-flex align-items-center">
         <img src="assets/website.png" class="footer-icon rounded-circle" alt="website icon">
@@ -227,11 +266,7 @@
         <img src="assets/phone.png" class="footer-icon rounded-circle" alt="phone icon">
         <span><strong>Contact :</strong> +91 12345 67890 </span>
       </div>
-      <div class="mb-3 d-flex align-items-center">
-        <img src="assets/linkedin.png" class="footer-icon rounded-circle" alt="linkedin icon">
-        <span><strong>LinkedIn :</strong> LinkedIn </span>
-      </div>
-      <p class="text-center mt-4 mb-0">© All rights reserved | Akilesh </p>
+      <p class="text-center mt-4 mb-0">© All rights reserved | Akilesh</p>
     </div>
   </footer>
 
