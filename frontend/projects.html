@@ -4,132 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Projects</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-  body {
-    background-color: #0d0d0d;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #d4f1f9;
-  }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: #d4f1f9;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-  h2 {
-    font-weight: bold;
-    color: #00f0ff;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
-    text-align: center;
-  }
+    h2 {
+      font-weight: bold;
+      color: #00f0ff;
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease forwards;
+    }
 
-  .project-card {
-    background-color: #1a1a1a;
-    border: 1px solid #00f0ff40;
-    border-radius: 15px;
-    box-shadow: 0 2px 6px rgba(0, 255, 255, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-  }
+    .project-card {
+      background-color: #1a1a1a;
+      border-radius: 15px;
+      border: 1px solid #00f0ff40;
+      box-shadow: 0 2px 6px rgba(0, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(40px);
+    }
 
-  .project-card:hover {
-    transform: scale(1.015);
-    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.15);
-  }
-
-  .project-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #00f0ff;
-  }
-
-  .project-desc {
-    font-size: 0.95rem;
-    color: #cfeeff;
-  }
-
-  .card-body {
-    padding: 1.5rem;
-  }
-
-  .row.g-4 {
-    justify-content: center;
-  }
-
-  @media (max-width: 576px) {
-    .card-body {
-      padding: 1.25rem;
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      border: 1px solid #00f0ff80;
+      animation: pulseGlow 1.5s infinite;
     }
 
     .project-title {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #00f0ff;
     }
 
     .project-desc {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      color: #cfeeff;
     }
-  }
-</style>
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .row.g-4 {
+      justify-content: center;
+    }
+
+    @media (max-width: 576px) {
+      .card-body {
+        padding: 1.25rem;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+      }
+
+      .project-desc {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+      }
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .project-card.float {
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+
+    .animate {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      transition: all 0.8s ease;
+    }
+  </style>
 </head>
 <body>
 
   <div class="container py-5">
-    <h2 class="text-center mb-5">Projects</h2>
+    <h2 class="text-center">Projects</h2>
     <div class="row g-4">
-
+      <!-- Card 1 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/PhishingEmailDetector')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/PhishingEmailDetector')">
           <div class="card-body">
             <h5 class="project-title">Phishing Email Detector</h5>
-            <p class="project-desc">A cutting-edge app that protects users from phishing attempts by leveraging NLP, machine learning, and voice recognition technologies. It provides real-time URL analysis, email content scanning, and a history of scanned items to ensure user safety and security.</p>
+            <p class="project-desc">Protects users from phishing using NLP, ML, and voice recognition. Real-time scanning and URL analysis.</p>
           </div>
         </div>
       </div>
-
+      <!-- Card 2 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/WildlifePoachingDetector')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/WildlifePoachingDetector')">
           <div class="card-body">
             <h5 class="project-title">Wildlife Poaching Detector</h5>
-            <p class="project-desc">A Python-based analytical tool designed to detect and monitor poaching activities within forest ecosystems. Utilizing data science and machine learning, this application helps identify suspicious patterns, track illegal movements, and support wildlife protection efforts.</p>
+            <p class="project-desc">ML-powered Python tool for detecting and tracking poaching using data science and movement analysis.</p>
           </div>
         </div>
       </div>
-
+      <!-- Card 3 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/DeforestationThreatMonitor')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/DeforestationThreatMonitor')">
           <div class="card-body">
             <h5 class="project-title">Deforestation Threat Monitor</h5>
-            <p class="project-desc">Built predictive ML/DL models to solve real-world problems such as stock price prediction, image classification, and anomaly detection using diverse datasets and advanced neural architectures.</p>
+            <p class="project-desc">Uses ML/DL models for stock predictions, image recognition, and anomaly detection across real-world datasets.</p>
           </div>
         </div>
       </div>
-
+      <!-- Card 4 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/TomcatDeployment')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/TomcatDeployment')">
           <div class="card-body">
-            <h5 class="project-title">End to End CI - CD pipeline</h5>
-            <p class="project-desc">This project implements a complete CI/CD automation pipeline for deploying a Java-based web application using industry-standard DevOps tools. The pipeline ensures that every code commit is automatically built, tested, packaged, and deployed to a Tomcat server.</p>
+            <h5 class="project-title">End to End CI-CD Pipeline</h5>
+            <p class="project-desc">Full CI/CD automation pipeline using DevOps tools to build, test, and deploy Java apps to Tomcat server.</p>
           </div>
         </div>
       </div>
-
+      <!-- Card 5 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/QRLizer')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/QRLizer')">
           <div class="card-body">
             <h5 class="project-title">QRLizer</h5>
-            <p class="project-desc">This Flutter-based mobile application is designed to detect QR code phishing (quishing) attacks. Users can scan QR codes, and the app extracts the embedded URL or data, which is then analyzed using a backend API to determine whether the link is safe or malicious.</p>
+            <p class="project-desc">Flutter app detecting malicious QR code links via backend API threat analysis. Protects against quishing.</p>
           </div>
         </div>
       </div>
-
+      <!-- Card 6 -->
       <div class="col-md-6 col-lg-4">
-        <div class="card project-card" onclick="window.open('https://github.com/Akilesh-GA/Stream-Station')">
+        <div class="card project-card float" onclick="window.open('https://github.com/Akilesh-GA/Stream-Station')">
           <div class="card-body">
             <h5 class="project-title">Stream-Station</h5>
-            <p class="project-desc">A Flutter-based game streaming solution featuring Sunshine as the PC streaming host and Moonlight as the client, enabling low-latency, high-quality streaming across multiple platforms and devices seamlessly.</p>
+            <p class="project-desc">Game streaming using Sunshine & Moonlight. High quality, low-latency experience across platforms.</p>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
+
+  <!-- Scroll-triggered reveal using IntersectionObserver -->
+  <script>
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
