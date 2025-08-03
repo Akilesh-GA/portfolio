@@ -7,94 +7,155 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
   :root {
-    --primary-color: #00f0ff;
-    --accent-color: #00c9d8;
-    --text-color: #d4f1f9;
-    --bg-light: #0d0d0d;
-    --shadow-color: rgba(0, 255, 255, 0.15);
-  }
+  --primary-color: #00f0ff;
+  --accent-color: #00c9d8;
+  --text-color: #d4f1f9;
+  --bg-light: #0d0d0d;
+  --shadow-color: rgba(0, 255, 255, 0.15);
+}
 
-  body {
-    background-color: var(--bg-light);
-    color: var(--text-color);
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-  }
+body {
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-  h2, h4 {
-    font-weight: 600;
-    text-shadow: 0 0 6px rgba(0, 255, 255, 0.25);
-    color: white;
-  }
+h2, h4 {
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.25);
+  margin-bottom: 20px;
+}
 
-  .footer-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid var(--accent-color);
-  }
+.footer-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--accent-color);
+  transition: transform 0.3s ease;
+}
 
-  .contact-card {
-    background-color: #1a1a1a;
-    border-radius: 15px;
-    box-shadow: 0 2px 6px rgba(0, 255, 255, 0.05);
-    transition: box-shadow 0.4s ease, transform 0.4s ease;
-    border: none;
-  }
+.footer-icon:hover {
+  transform: scale(1.1);
+}
 
-  .contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 14px var(--shadow-color);
-  }
+.contact-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  color: #ffffff;
+  border: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 20px;
+}
 
-  a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-  }
+.contact-block:hover {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--shadow-color);
+  margin-bottom: 15px;
+}
 
-  a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-  }
 
-  .form-control {
-    background-color: #121212;
-    color: #ffffff;
-    border: 1px solid #333;
-    transition: all 0.3s ease;
-  }
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
 
-  .form-control:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
-    background-color: #1f1f1f;
-    color: #ffffff;
-  }
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-  .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-  }
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
 
-  .btn-primary {
-    background-color: var(--primary-color);
-    border: none;
-    color: #000;
-    transition: background-color 0.3s ease;
-  }
+.form-control {
+  background-color: #121212;
+  color: #ffffff;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
 
-  .btn-primary:hover {
-    background-color: var(--accent-color);
-  }
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
 
-  .container {
-    max-width: 960px;
-  }
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
 
-  strong {
-    color: white;
+.btn-primary {
+  animation: fadeSlideIn 1.2s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.container {
+  max-width: 960px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact-value {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+strong {
+  color: white;
+}
+
+.contact-block {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+.contact-block:nth-child(1) { animation-delay: 0.2s; }
+.contact-block:nth-child(2) { animation-delay: 0.4s; }
+.contact-block:nth-child(3) { animation-delay: 0.6s; }
+.contact-block:nth-child(4) { animation-delay: 0.8s; }
+
+.contact-block:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 14px var(--shadow-color);
+  transform: translateY(-4px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+
 </style>
 </head>
 <body>
@@ -103,39 +164,52 @@
     <h2 class="text-center mb-5">Get in Touch</h2>
     <div class="row g-4">
 
-      <div class="col-md-6">
-        <div class="card contact-card p-3 d-flex align-items-center flex-row gap-3">
-          <img src="assets/mail.png" alt="Email" class="footer-icon">
-          <div><strong>Email: akileshga.1466@gmail.com </strong> </div>
+      <div class="contact-block d-flex align-items-center gap-5">
+        <img src="assets/mail.png" alt="Email" class="footer-icon">
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">akileshga.1466@gmail.com</div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card contact-card p-3 d-flex align-items-center flex-row gap-3">
-          <img src="assets/linkedin_icon.png" alt="LinkedIn" class="footer-icon">
-          <div>
-            <a href="https://www.linkedin.com/in/akilesh-g-a-704959304/">LinkedIn</a>
+
+      <div class="contact-block d-flex align-items-center gap-5">
+        <img src="assets/linkedin_icon.png" alt="LinkedIn" class="footer-icon">
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">
+            <a href="https://www.linkedin.com/in/akilesh-g-a-704959304/" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/akilesh-g-a-704959304
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card contact-card p-3 d-flex align-items-center flex-row gap-3">
-          <img src="assets/github.png" alt="GitHub" class="footer-icon">
-          <div> 
-            <a href="https://github.com/Akilesh-GA">GitHub</a>
+      <div class="contact-block d-flex align-items-center gap-5">
+        <img src="assets/github.png" alt="GitHub" class="footer-icon">
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">
+            <a href="https://github.com/Akilesh-GA" target="_blank" rel="noopener noreferrer">
+              github.com/Akilesh-GA
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card contact-card p-3 d-flex align-items-center flex-row gap-3">
-          <img src="assets/leetcode.png" alt="LeetCode" class="footer-icon">
-          <div>
-            <a href="https://leetcode.com/u/Akilesh_1466/">LeetCode</a>
+      <div class="contact-block d-flex align-items-center gap-5">
+        <img src="assets/leetcode.png" alt="LeetCode" class="footer-icon">
+        <div>
+          <div class="contact-label">LeetCode</div>
+          <div class="contact-value">
+            <a href="https://leetcode.com/u/Akilesh_1466/" target="_blank" rel="noopener noreferrer">
+              leetcode.com/u/Akilesh_1466
+            </a>
           </div>
         </div>
       </div>
+
+
 
       <div class="col-12">
         <div class="card contact-card p-4 mt-4">

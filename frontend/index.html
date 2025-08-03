@@ -50,7 +50,7 @@
 
     .navbar-nav .nav-link:hover {
       color: var(--accent-color);
-      text-shadow: 0 0 8px var(--accent-color);
+      text-shadow: 0 0 6px var(--accent-color);
     }
 
     section {
@@ -70,7 +70,6 @@
 
     .welcome-section {
       min-height: 700px;
-      background: url("assets/background.png") no-repeat center center;
       background-size: 70% auto;
       background-position: center;
       display: flex;
@@ -86,7 +85,7 @@
       box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
       border-radius: 20px;
       padding: 10px;
-      background-color: #0a0a0a;
+      background-color: black;
       max-width: 320px;
       animation: scaleIn 1s ease forwards;
       opacity: 0;
@@ -95,18 +94,17 @@
     }
 
     .carousel-card {
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
       border: none;
-      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.15);
+      box-shadow: 0 8px 12px rgba(0, 255, 255, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #111;
+      background-color: black;
       will-change: transform, box-shadow;
     }
 
     .carousel-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(0, 255, 255, 0.4);
     }
 
     .carousel-card img {
@@ -217,12 +215,13 @@
   <nav class="navbar navbar-expand-md fade-in-down delay-1">
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <a class="navbar-brand ms-3">
-        <img src="assets/user.jpeg" alt="image" width="40">
+        <!-- <img src="assets/akilesh-image.png" alt="image" width="50" class="rounded-circle"> -->
       </a>
       <ul class="navbar-nav me-5 flex-row gap-4">
         <li class="nav-item"><a class="nav-link fs-5" href="projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="skills.html">Skills</a></li>
+        <li class="nav-item"><a class="nav-link fs-5" href="expirence.html">Expirence</a></li>
         <li class="nav-item"><a class="nav-link fs-5" href="https://drive.google.com/file/d/1osmpWtQgEwXMUcpEKV6wKNLrckuMJ4ZR/view">Resume</a></li>
       </ul>
     </div>
@@ -323,7 +322,6 @@
                   </div>
                 </div>
               </div>
-            </div>
 
             <button title="prev" class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon"></span>
@@ -342,14 +340,15 @@
       <h4 class="mb-4">Contact</h4>
       <div class="mb-3 d-flex align-items-center">
         <img src="assets/mail.png" class="footer-icon rounded-circle" alt="mail icon">
-        <span><strong>Mail : </strong>
-          <a href="mailto:akileshga.1466@gmail.com">akileshga.1466@gmail.com</a>
+        <span class="ms-2">
+          <strong>Mail :</strong>
+          <a href="mailto:akileshga.1466@gmail.com"> akileshga.1466@gmail.com </a>
         </span>
       </div>
       <div class="mb-3 d-flex align-items-center">
-        <img src="assets/website.png" class="footer-icon rounded-circle" alt="website icon">
-        <span><strong> Website : </strong>
-        <a href="https://portfolio-nine-liart-h6xw0qfncd.vercel.app/frontend/index.html"> portfolio </a>
+        <img src="assets/instagram.jpeg" class="footer-icon rounded-circle" alt="website icon">
+        <span><strong> Instagram : </strong>
+        <a href="https://www.instagram.com/_akilesh.14_/"> Follow on Instagram </a>
         </span>
       </div>
       <div class="mb-3 d-flex align-items-center">
